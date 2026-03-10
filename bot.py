@@ -16,7 +16,7 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Content-Type": "application/json"
     }
     data = {
-        "model": "llama3-70b-8192",
+        "model": "llama-3.1-8b-instant",
         "messages": [
             {"role": "user", "content": user_text}
         ],
