@@ -23,18 +23,19 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
     }
 
-r = requests.post(url, headers=headers, json=data)
+    r = requests.post(url, headers=headers, json=data)
 
-if r.status_code != 200:
-    reply = "AI接口调用失败"
-else:
-    result = r.json()
-    try:
-        reply = result["choices"][0]["message"]["content"]
-    except:
-        reply = str(result)
+    if r.status_code != 200:
+        reply = "AI接口调用失败"
+    else:
+        result = r.json()
+        try:
+            reply = result["choices"][0]["message"]["content"]
+        except:
+            reply = str(result)
 
     await update.message.reply_text(reply)
+
 
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
