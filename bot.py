@@ -26,7 +26,7 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
     r = requests.post(url, headers=headers, json=data)
 
     if r.status_code != 200:
-        reply = "AI接口调用失败"
+        reply = f"错误代码: {r.status_code} 内容: {r.text}"
     else:
         result = r.json()
         try:
