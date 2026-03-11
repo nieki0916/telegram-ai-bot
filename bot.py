@@ -24,7 +24,7 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_text}
         ]
-    },
+    }
         "temperature": 0.7,
         "max_tokens": 512
     }
