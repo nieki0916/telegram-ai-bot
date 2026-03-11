@@ -6,8 +6,7 @@ from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTyp
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# 读取Skill
-with open("skill.md", "r", encoding="utf-8") as f:
+with open("Skill.md", "r", encoding="utf-8") as f:
     system_prompt = f.read()
 
 async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
